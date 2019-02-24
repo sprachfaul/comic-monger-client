@@ -1,0 +1,30 @@
+<div *ngIf="comic">
+  <h2>{{comic.titel | uppercase}} details:</h2>
+  <img src="{{comic.coverUrl}}" />
+  <div class="container">
+    <label>Titel:</label>
+    <input [(ngModel)]="comic.titel" placeholder="Titel">
+    
+    <label>Nummer:</label>
+    <input [(ngModel)]="comic.nummer" placeholder="Nummer">
+
+    <label>Untertitel:</label>
+    <input [(ngModel)]="comic.untertitel" placeholder="Untertitel">
+
+    <label>Preis:</label>
+    <input [(ngModel)]="comic.preis" placeholder="Preis" >
+
+    <label>ISBN:</label>
+    <input [(ngModel)]="comic.isbn" placeholder="ISBN" >
+
+    <label>Wertung:</label>
+    <input [(ngModel)]="comic.wertung" placeholder="Eigene Wertung" >
+
+    <label>Release:</label>
+    <input [(ngModel)]="comic.releaseDatum" placeholder="Release Date" >
+
+    <label>Inhalt:</label>
+    <input [(ngModel)]="comic.inhaltsangabe" placeholder="Inhaltsangabe" >
+  </div>
+</div>
+<button (click)="goBack()">go back</button>
