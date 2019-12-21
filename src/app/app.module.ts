@@ -8,6 +8,7 @@ import { ComicsComponent } from './comics/comics.component';
 import { ComicDetailComponent } from './comic-detail/comic-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { HttpClientModule }    from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+	HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,9 +1,18 @@
 <h2>My comics</h2>
+<div>
+  <label>Comic title:
+    <input #comicTitle />
+  </label>
+  <button (click)="add(comicTitle.value); comicTitle.value=''">
+    add
+  </button>
+</div>
 
 <ul class="comics">
   <li *ngFor="let comic of comics">
     <a routerLink="/detail/{{comic.id}}">
       <span class="badge">{{comic.id}}</span>{{comic.titel}}
     </a>
+    <button (click)="delete(comic)"class="delete" title="delete comic">x</button>
   </li>
 </ul>

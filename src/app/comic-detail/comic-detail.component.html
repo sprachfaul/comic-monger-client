@@ -2,6 +2,9 @@
   <h2>{{comic.titel | uppercase}} details:</h2>
   <img src="{{comic.coverUrl}}" />
   <div class="container">
+    <label>coverUrl:</label>
+    <input [(ngModel)]="comic.coverUrl" placeholder="coverUrl">
+    
     <label>Titel:</label>
     <input [(ngModel)]="comic.titel" placeholder="Titel">
     
@@ -28,3 +31,4 @@
   </div>
 </div>
 <button (click)="goBack()">go back</button>
+<button (click)="save()">save</button>

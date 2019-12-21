@@ -17,6 +17,23 @@ export class ComicsComponent implements OnInit {
         this.comicService.getComics().subscribe(comics => this.comics = comics);
     }
 
+    add(titel: string): void {
+        titel = titel.trim();
+        if (!titel) { return; }
+        this.comicService.addComic({ titel } as Comic)
+          .subscribe(comic => {
+            this.comics.push(comic);
+          });
+    }
+
+    delete(comic: Comic): void {
+        if(confirm(`Are you sure to delete ${comic.titel}`)) {
+          this.comics = this.comics.filter(h => h !== comic);
+          this.comicService.deleteComic(comic).subscribe();
+        }
+      }
+
+
     ngOnInit() {
         this.getComics();
     }

@@ -30,4 +30,9 @@ export class ComicDetailComponent implements OnInit {
     goBack(): void {
         this.location.back();
     }
+
+    save(): void {
+        this.comicService.updateComic(this.comic)
+          .subscribe(() => this.goBack());
+    }
 }
