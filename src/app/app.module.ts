@@ -11,6 +11,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule }    from '@angular/common/http';
 
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
+import { IsbnscannerComponent } from "./isbnscanner/isbnscanner.component";
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { ZXingScannerModule } from '@zxing/ngx-scanner';
     ComicsComponent,
     ComicDetailComponent,
     MessagesComponent,
-    DashboardComponent
+    DashboardComponent,
+    IsbnscannerComponent
   ],
   imports: [
     BrowserModule,

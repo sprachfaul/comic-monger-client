@@ -11,7 +11,8 @@ export class ComicsComponent implements OnInit {
 
     comics: Comic[];
 
-    constructor(private comicService: ComicService) { }
+    constructor(private comicService: ComicService) { 
+    }
 
     getComics(): void {
         this.comicService.getComics().subscribe(comics => this.comics = comics);

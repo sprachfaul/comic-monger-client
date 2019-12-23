@@ -18,12 +18,15 @@ interface GetResponse {
     providedIn: 'root'
 })
 export class ComicService {
-    private comicsUrl = 'http://localhost:4200/api/comics';  // URL to web api
+    private comicsUrl = '/api/comics';  // URL to web api
+    private isbnUrl = '/api/isbn';  // URL to web api
 	
     constructor(private http: HttpClient, private messageService: MessageService) { }
     
-    newBarcode(barcode: string) {
-        this.messageService.add(`ComicService: new barcode available${barcode}`);
+    newIsbn(isbn: string): Observable<Comic[]> {
+        this.messageService.add(`ComicService: new isbn available isbn=${isbn}`);
+        const url = `${this.isbnUrl}?isbn=${isbn}`;
+        return this.http.get<Comic[]>(url);
     }
 
     getComic(id: number): Observable<Comic> {
