@@ -18,9 +18,13 @@ interface GetResponse {
     providedIn: 'root'
 })
 export class ComicService {
-	private comicsUrl = 'http://localhost:4200/api/comics';  // URL to web api
+    private comicsUrl = 'http://localhost:4200/api/comics';  // URL to web api
 	
     constructor(private http: HttpClient, private messageService: MessageService) { }
+    
+    newBarcode(barcode: string) {
+        this.messageService.add(`ComicService: new barcode available${barcode}`);
+    }
 
     getComic(id: number): Observable<Comic> {
         this.messageService.add(`ComicService: fetched comic id=${id}`);

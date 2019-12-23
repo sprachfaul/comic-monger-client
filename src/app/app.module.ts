@@ -10,6 +10,9 @@ import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule }    from '@angular/common/http';
 
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +25,8 @@ import { HttpClientModule }    from '@angular/common/http';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-	HttpClientModule
+    HttpClientModule,
+    ZXingScannerModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
