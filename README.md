@@ -20,6 +20,11 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
+Build in docker and create a nginx hosted app:
+    docker build -f Dockerfile-prod -t comic-monger-client:prod .
+    docker run -it -p 80:80 --rm comic-monger-client:prod
+see https://mherman.org/blog/dockerizing-an-angular-app/
+
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
